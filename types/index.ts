@@ -12,4 +12,4 @@ export type Product = z.infer<typeof insertProductSchema> & {
 };
 
 export type Cart = z.infer<typeof insertCartSchema>;
-export type Item = z.infer<typeof cartItemSchema>;
+export type CartItem = z.infer<typeof cartItemSchema>;
