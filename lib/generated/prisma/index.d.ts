@@ -6968,14 +6968,14 @@ export namespace Prisma {
   export type CartAvgAggregateOutputType = {
     itemsPrice: Decimal | null
     totalPrice: Decimal | null
-    shoppingPrice: Decimal | null
+    shippingPrice: Decimal | null
     taxPrice: Decimal | null
   }
 
   export type CartSumAggregateOutputType = {
     itemsPrice: Decimal | null
     totalPrice: Decimal | null
-    shoppingPrice: Decimal | null
+    shippingPrice: Decimal | null
     taxPrice: Decimal | null
   }
 
@@ -6985,7 +6985,7 @@ export namespace Prisma {
     sessionCartId: string | null
     itemsPrice: Decimal | null
     totalPrice: Decimal | null
-    shoppingPrice: Decimal | null
+    shippingPrice: Decimal | null
     taxPrice: Decimal | null
     createdAt: Date | null
   }
@@ -6996,7 +6996,7 @@ export namespace Prisma {
     sessionCartId: string | null
     itemsPrice: Decimal | null
     totalPrice: Decimal | null
-    shoppingPrice: Decimal | null
+    shippingPrice: Decimal | null
     taxPrice: Decimal | null
     createdAt: Date | null
   }
@@ -7008,7 +7008,7 @@ export namespace Prisma {
     items: number
     itemsPrice: number
     totalPrice: number
-    shoppingPrice: number
+    shippingPrice: number
     taxPrice: number
     createdAt: number
     _all: number
@@ -7018,14 +7018,14 @@ export namespace Prisma {
   export type CartAvgAggregateInputType = {
     itemsPrice?: true
     totalPrice?: true
-    shoppingPrice?: true
+    shippingPrice?: true
     taxPrice?: true
   }
 
   export type CartSumAggregateInputType = {
     itemsPrice?: true
     totalPrice?: true
-    shoppingPrice?: true
+    shippingPrice?: true
     taxPrice?: true
   }
 
@@ -7035,7 +7035,7 @@ export namespace Prisma {
     sessionCartId?: true
     itemsPrice?: true
     totalPrice?: true
-    shoppingPrice?: true
+    shippingPrice?: true
     taxPrice?: true
     createdAt?: true
   }
@@ -7046,7 +7046,7 @@ export namespace Prisma {
     sessionCartId?: true
     itemsPrice?: true
     totalPrice?: true
-    shoppingPrice?: true
+    shippingPrice?: true
     taxPrice?: true
     createdAt?: true
   }
@@ -7058,7 +7058,7 @@ export namespace Prisma {
     items?: true
     itemsPrice?: true
     totalPrice?: true
-    shoppingPrice?: true
+    shippingPrice?: true
     taxPrice?: true
     createdAt?: true
     _all?: true
@@ -7157,7 +7157,7 @@ export namespace Prisma {
     items: JsonValue[]
     itemsPrice: Decimal
     totalPrice: Decimal
-    shoppingPrice: Decimal
+    shippingPrice: Decimal
     taxPrice: Decimal
     createdAt: Date
     _count: CartCountAggregateOutputType | null
@@ -7188,7 +7188,7 @@ export namespace Prisma {
     items?: boolean
     itemsPrice?: boolean
     totalPrice?: boolean
-    shoppingPrice?: boolean
+    shippingPrice?: boolean
     taxPrice?: boolean
     createdAt?: boolean
     user?: boolean | Cart$userArgs<ExtArgs>
@@ -7201,7 +7201,7 @@ export namespace Prisma {
     items?: boolean
     itemsPrice?: boolean
     totalPrice?: boolean
-    shoppingPrice?: boolean
+    shippingPrice?: boolean
     taxPrice?: boolean
     createdAt?: boolean
     user?: boolean | Cart$userArgs<ExtArgs>
@@ -7214,7 +7214,7 @@ export namespace Prisma {
     items?: boolean
     itemsPrice?: boolean
     totalPrice?: boolean
-    shoppingPrice?: boolean
+    shippingPrice?: boolean
     taxPrice?: boolean
     createdAt?: boolean
     user?: boolean | Cart$userArgs<ExtArgs>
@@ -7227,12 +7227,12 @@ export namespace Prisma {
     items?: boolean
     itemsPrice?: boolean
     totalPrice?: boolean
-    shoppingPrice?: boolean
+    shippingPrice?: boolean
     taxPrice?: boolean
     createdAt?: boolean
   }
 
-  export type CartOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "sessionCartId" | "items" | "itemsPrice" | "totalPrice" | "shoppingPrice" | "taxPrice" | "createdAt", ExtArgs["result"]["cart"]>
+  export type CartOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "sessionCartId" | "items" | "itemsPrice" | "totalPrice" | "shippingPrice" | "taxPrice" | "createdAt", ExtArgs["result"]["cart"]>
   export type CartInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | Cart$userArgs<ExtArgs>
   }
@@ -7255,7 +7255,7 @@ export namespace Prisma {
       items: Prisma.JsonValue[]
       itemsPrice: Prisma.Decimal
       totalPrice: Prisma.Decimal
-      shoppingPrice: Prisma.Decimal
+      shippingPrice: Prisma.Decimal
       taxPrice: Prisma.Decimal
       createdAt: Date
     }, ExtArgs["result"]["cart"]>
@@ -7688,7 +7688,7 @@ export namespace Prisma {
     readonly items: FieldRef<"Cart", 'Json[]'>
     readonly itemsPrice: FieldRef<"Cart", 'Decimal'>
     readonly totalPrice: FieldRef<"Cart", 'Decimal'>
-    readonly shoppingPrice: FieldRef<"Cart", 'Decimal'>
+    readonly shippingPrice: FieldRef<"Cart", 'Decimal'>
     readonly taxPrice: FieldRef<"Cart", 'Decimal'>
     readonly createdAt: FieldRef<"Cart", 'DateTime'>
   }
@@ -8221,7 +8221,7 @@ export namespace Prisma {
     items: 'items',
     itemsPrice: 'itemsPrice',
     totalPrice: 'totalPrice',
-    shoppingPrice: 'shoppingPrice',
+    shippingPrice: 'shippingPrice',
     taxPrice: 'taxPrice',
     createdAt: 'createdAt'
   };
@@ -8772,7 +8772,7 @@ export namespace Prisma {
     items?: JsonNullableListFilter<"Cart">
     itemsPrice?: DecimalFilter<"Cart"> | Decimal | DecimalJsLike | number | string
     totalPrice?: DecimalFilter<"Cart"> | Decimal | DecimalJsLike | number | string
-    shoppingPrice?: DecimalFilter<"Cart"> | Decimal | DecimalJsLike | number | string
+    shippingPrice?: DecimalFilter<"Cart"> | Decimal | DecimalJsLike | number | string
     taxPrice?: DecimalFilter<"Cart"> | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFilter<"Cart"> | Date | string
     user?: XOR<UserNullableScalarRelationFilter, UserWhereInput> | null
@@ -8785,7 +8785,7 @@ export namespace Prisma {
     items?: SortOrder
     itemsPrice?: SortOrder
     totalPrice?: SortOrder
-    shoppingPrice?: SortOrder
+    shippingPrice?: SortOrder
     taxPrice?: SortOrder
     createdAt?: SortOrder
     user?: UserOrderByWithRelationInput
@@ -8801,7 +8801,7 @@ export namespace Prisma {
     items?: JsonNullableListFilter<"Cart">
     itemsPrice?: DecimalFilter<"Cart"> | Decimal | DecimalJsLike | number | string
     totalPrice?: DecimalFilter<"Cart"> | Decimal | DecimalJsLike | number | string
-    shoppingPrice?: DecimalFilter<"Cart"> | Decimal | DecimalJsLike | number | string
+    shippingPrice?: DecimalFilter<"Cart"> | Decimal | DecimalJsLike | number | string
     taxPrice?: DecimalFilter<"Cart"> | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFilter<"Cart"> | Date | string
     user?: XOR<UserNullableScalarRelationFilter, UserWhereInput> | null
@@ -8814,7 +8814,7 @@ export namespace Prisma {
     items?: SortOrder
     itemsPrice?: SortOrder
     totalPrice?: SortOrder
-    shoppingPrice?: SortOrder
+    shippingPrice?: SortOrder
     taxPrice?: SortOrder
     createdAt?: SortOrder
     _count?: CartCountOrderByAggregateInput
@@ -8834,7 +8834,7 @@ export namespace Prisma {
     items?: JsonNullableListFilter<"Cart">
     itemsPrice?: DecimalWithAggregatesFilter<"Cart"> | Decimal | DecimalJsLike | number | string
     totalPrice?: DecimalWithAggregatesFilter<"Cart"> | Decimal | DecimalJsLike | number | string
-    shoppingPrice?: DecimalWithAggregatesFilter<"Cart"> | Decimal | DecimalJsLike | number | string
+    shippingPrice?: DecimalWithAggregatesFilter<"Cart"> | Decimal | DecimalJsLike | number | string
     taxPrice?: DecimalWithAggregatesFilter<"Cart"> | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeWithAggregatesFilter<"Cart"> | Date | string
   }
@@ -9282,7 +9282,7 @@ export namespace Prisma {
     items?: CartCreateitemsInput | InputJsonValue[]
     itemsPrice: Decimal | DecimalJsLike | number | string
     totalPrice: Decimal | DecimalJsLike | number | string
-    shoppingPrice: Decimal | DecimalJsLike | number | string
+    shippingPrice: Decimal | DecimalJsLike | number | string
     taxPrice: Decimal | DecimalJsLike | number | string
     createdAt?: Date | string
     user?: UserCreateNestedOneWithoutCartInput
@@ -9295,7 +9295,7 @@ export namespace Prisma {
     items?: CartCreateitemsInput | InputJsonValue[]
     itemsPrice: Decimal | DecimalJsLike | number | string
     totalPrice: Decimal | DecimalJsLike | number | string
-    shoppingPrice: Decimal | DecimalJsLike | number | string
+    shippingPrice: Decimal | DecimalJsLike | number | string
     taxPrice: Decimal | DecimalJsLike | number | string
     createdAt?: Date | string
   }
@@ -9306,7 +9306,7 @@ export namespace Prisma {
     items?: CartUpdateitemsInput | InputJsonValue[]
     itemsPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     totalPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
-    shoppingPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    shippingPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     taxPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneWithoutCartNestedInput
@@ -9319,7 +9319,7 @@ export namespace Prisma {
     items?: CartUpdateitemsInput | InputJsonValue[]
     itemsPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     totalPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
-    shoppingPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    shippingPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     taxPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9331,7 +9331,7 @@ export namespace Prisma {
     items?: CartCreateitemsInput | InputJsonValue[]
     itemsPrice: Decimal | DecimalJsLike | number | string
     totalPrice: Decimal | DecimalJsLike | number | string
-    shoppingPrice: Decimal | DecimalJsLike | number | string
+    shippingPrice: Decimal | DecimalJsLike | number | string
     taxPrice: Decimal | DecimalJsLike | number | string
     createdAt?: Date | string
   }
@@ -9342,7 +9342,7 @@ export namespace Prisma {
     items?: CartUpdateitemsInput | InputJsonValue[]
     itemsPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     totalPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
-    shoppingPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    shippingPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     taxPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9354,7 +9354,7 @@ export namespace Prisma {
     items?: CartUpdateitemsInput | InputJsonValue[]
     itemsPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     totalPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
-    shoppingPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    shippingPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     taxPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9942,7 +9942,7 @@ export namespace Prisma {
     items?: SortOrder
     itemsPrice?: SortOrder
     totalPrice?: SortOrder
-    shoppingPrice?: SortOrder
+    shippingPrice?: SortOrder
     taxPrice?: SortOrder
     createdAt?: SortOrder
   }
@@ -9950,7 +9950,7 @@ export namespace Prisma {
   export type CartAvgOrderByAggregateInput = {
     itemsPrice?: SortOrder
     totalPrice?: SortOrder
-    shoppingPrice?: SortOrder
+    shippingPrice?: SortOrder
     taxPrice?: SortOrder
   }
 
@@ -9960,7 +9960,7 @@ export namespace Prisma {
     sessionCartId?: SortOrder
     itemsPrice?: SortOrder
     totalPrice?: SortOrder
-    shoppingPrice?: SortOrder
+    shippingPrice?: SortOrder
     taxPrice?: SortOrder
     createdAt?: SortOrder
   }
@@ -9971,7 +9971,7 @@ export namespace Prisma {
     sessionCartId?: SortOrder
     itemsPrice?: SortOrder
     totalPrice?: SortOrder
-    shoppingPrice?: SortOrder
+    shippingPrice?: SortOrder
     taxPrice?: SortOrder
     createdAt?: SortOrder
   }
@@ -9979,7 +9979,7 @@ export namespace Prisma {
   export type CartSumOrderByAggregateInput = {
     itemsPrice?: SortOrder
     totalPrice?: SortOrder
-    shoppingPrice?: SortOrder
+    shippingPrice?: SortOrder
     taxPrice?: SortOrder
   }
 
@@ -10601,7 +10601,7 @@ export namespace Prisma {
     items?: CartCreateitemsInput | InputJsonValue[]
     itemsPrice: Decimal | DecimalJsLike | number | string
     totalPrice: Decimal | DecimalJsLike | number | string
-    shoppingPrice: Decimal | DecimalJsLike | number | string
+    shippingPrice: Decimal | DecimalJsLike | number | string
     taxPrice: Decimal | DecimalJsLike | number | string
     createdAt?: Date | string
   }
@@ -10612,7 +10612,7 @@ export namespace Prisma {
     items?: CartCreateitemsInput | InputJsonValue[]
     itemsPrice: Decimal | DecimalJsLike | number | string
     totalPrice: Decimal | DecimalJsLike | number | string
-    shoppingPrice: Decimal | DecimalJsLike | number | string
+    shippingPrice: Decimal | DecimalJsLike | number | string
     taxPrice: Decimal | DecimalJsLike | number | string
     createdAt?: Date | string
   }
@@ -10715,7 +10715,7 @@ export namespace Prisma {
     items?: JsonNullableListFilter<"Cart">
     itemsPrice?: DecimalFilter<"Cart"> | Decimal | DecimalJsLike | number | string
     totalPrice?: DecimalFilter<"Cart"> | Decimal | DecimalJsLike | number | string
-    shoppingPrice?: DecimalFilter<"Cart"> | Decimal | DecimalJsLike | number | string
+    shippingPrice?: DecimalFilter<"Cart"> | Decimal | DecimalJsLike | number | string
     taxPrice?: DecimalFilter<"Cart"> | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFilter<"Cart"> | Date | string
   }
@@ -10988,7 +10988,7 @@ export namespace Prisma {
     items?: CartCreateitemsInput | InputJsonValue[]
     itemsPrice: Decimal | DecimalJsLike | number | string
     totalPrice: Decimal | DecimalJsLike | number | string
-    shoppingPrice: Decimal | DecimalJsLike | number | string
+    shippingPrice: Decimal | DecimalJsLike | number | string
     taxPrice: Decimal | DecimalJsLike | number | string
     createdAt?: Date | string
   }
@@ -11065,7 +11065,7 @@ export namespace Prisma {
     items?: CartUpdateitemsInput | InputJsonValue[]
     itemsPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     totalPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
-    shoppingPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    shippingPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     taxPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -11076,7 +11076,7 @@ export namespace Prisma {
     items?: CartUpdateitemsInput | InputJsonValue[]
     itemsPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     totalPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
-    shoppingPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    shippingPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     taxPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -11087,7 +11087,7 @@ export namespace Prisma {
     items?: CartUpdateitemsInput | InputJsonValue[]
     itemsPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     totalPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
-    shoppingPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    shippingPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     taxPrice?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }

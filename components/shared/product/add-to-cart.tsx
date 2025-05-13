@@ -22,7 +22,7 @@ const AddToCart = ({ item }: { item: CartItem }) => {
     toast.success(`${item.name} added to cart`, {
       action: (
         <Button
-          className='bg-primary text-white hover:bg-gray-800'
+          className='bg-primary text-secondary hover:bg-gray-800 hover:text-primary'
           onClick={() => router.push("/cart")}
         >
           Go to Cart
