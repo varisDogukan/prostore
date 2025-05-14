@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import ProductImages from "@/components/shared/product/product-images";
 import AddToCart from "@/components/shared/product/add-to-cart";
+import { getMyCart } from "@/lib/actions/cart.actions";
 
 const ProductDetailsPage = async ({
   params,
@@ -16,6 +17,8 @@ const ProductDetailsPage = async ({
 
   const product = await getProductBySlug(slug);
   if (!product) notFound();
+
+  const cart = await getMyCart();
 
   return (
     <>
@@ -78,6 +81,7 @@ const ProductDetailsPage = async ({
                         qty: 1,
                         image: product.images![0],
                       }}
+                      cart={cart}
                     />
                   </div>
                 )}
