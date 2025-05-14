@@ -54,7 +54,12 @@ const AddToCart = ({ item, cart }: { item: CartItem; cart?: Cart }) => {
 
   return existItem ? (
     <div className='w-full grid grid-cols-[1fr_auto_1fr] items-center gap-1'>
-      <Button type='button' variant='outline' onClick={handleRemoveFromCart}>
+      <Button
+        type='button'
+        variant='outline'
+        onClick={handleRemoveFromCart}
+        disabled={isDecreasePending}
+      >
         {isDecreasePending ? (
           <Loader className='size-4 animate-spin' />
         ) : (
@@ -62,7 +67,12 @@ const AddToCart = ({ item, cart }: { item: CartItem; cart?: Cart }) => {
         )}
       </Button>
       <span className='px-2'>{existItem.qty}</span>
-      <Button type='button' variant='outline' onClick={handleAddToCart}>
+      <Button
+        type='button'
+        variant='outline'
+        onClick={handleAddToCart}
+        disabled={isIncreasePending}
+      >
         {isIncreasePending ? (
           <Loader className='size-4 animate-spin' />
         ) : (
@@ -71,7 +81,12 @@ const AddToCart = ({ item, cart }: { item: CartItem; cart?: Cart }) => {
       </Button>
     </div>
   ) : (
-    <Button className='w-full' type='button' onClick={handleAddToCart}>
+    <Button
+      className='w-full'
+      type='button'
+      onClick={handleAddToCart}
+      disabled={isIncreasePending}
+    >
       {isIncreasePending ? (
         <Loader className='size-4 animate-spin' />
       ) : (
