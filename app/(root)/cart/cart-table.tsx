@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { useTransition } from "react";
+import { useState, useTransition } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { addItemToCart, removeItemFromCart } from "@/lib/actions/cart.actions";
@@ -17,11 +17,16 @@ import {
   TableCell,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
+import { formatCurrency } from "@/lib/utils";
+import { Card, CardContent } from "@/components/ui/card";
 
 const CartTable = ({ cart }: { cart?: Cart }) => {
   const router = useRouter();
+  const [isSelectedProduct, setIsSelectedProduct] = useState("");
   const [isIncreasePending, startIncreaseTransition] = useTransition();
   const [isDecreasePending, startDecreaseTransition] = useTransition();
+  const [isProceedToCheckout, startIsProceedToCheckoutTransition] =
+    useTransition();
 
   return (
     <>
@@ -63,10 +68,14 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
 
                     <TableCell className='flex-center gap-2'>
                       <Button
-                        disabled={isDecreasePending}
+                        disabled={
+                          isDecreasePending &&
+                          isSelectedProduct === item.productId
+                        }
                         variant='outline'
                         type='button'
-                        onClick={() =>
+                        onClick={() => {
+                          setIsSelectedProduct(item.productId);
                           startDecreaseTransition(async () => {
                             const res = await removeItemFromCart(
                               item.productId
@@ -75,10 +84,11 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
                             if (!res.success) {
                               toast.error(res.message);
                             }
-                          })
-                        }
+                          });
+                        }}
                       >
-                        {isDecreasePending ? (
+                        {isDecreasePending &&
+                        isSelectedProduct === item.productId ? (
                           <Loader className='size-4 animate-spin' />
                         ) : (
                           <Minus className='size-4' />
@@ -86,20 +96,25 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
                       </Button>
                       <span className='select-none'>{item.qty}</span>
                       <Button
-                        disabled={isIncreasePending}
+                        disabled={
+                          isIncreasePending &&
+                          isSelectedProduct === item.productId
+                        }
                         variant='outline'
                         type='button'
-                        onClick={() =>
+                        onClick={() => {
+                          setIsSelectedProduct(item.productId);
                           startIncreaseTransition(async () => {
                             const res = await addItemToCart(item);
 
                             if (!res.success) {
                               toast.error(res.message);
                             }
-                          })
-                        }
+                          });
+                        }}
                       >
-                        {isIncreasePending ? (
+                        {isIncreasePending &&
+                        isSelectedProduct === item.productId ? (
                           <Loader className='size-4 animate-spin' />
                         ) : (
                           <Plus className='size-4' />
@@ -113,6 +128,36 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
               </TableBody>
             </Table>
           </div>
+
+          <Card className='h-max'>
+            <CardContent className='p-4 gap-4'>
+              <div className='pb-3 text-xl flex justify-between'>
+                <span>
+                  Subtotal ({cart.items.reduce((a, c) => a + c.qty, 0)}):
+                </span>
+                <span className='font-bold'>
+                  {formatCurrency(cart.itemsPrice)}
+                </span>
+              </div>
+
+              <Button
+                className='w-full'
+                disabled={isProceedToCheckout}
+                onClick={() =>
+                  startIsProceedToCheckoutTransition(() =>
+                    router.push("/shipping-address")
+                  )
+                }
+              >
+                {isProceedToCheckout ? (
+                  <Loader className='size-4 animate-spin' />
+                ) : (
+                  <ArrowRight className='size-4' />
+                )}{" "}
+                Proceed to Checkout
+              </Button>
+            </CardContent>
+          </Card>
         </div>
       )}
     </>
