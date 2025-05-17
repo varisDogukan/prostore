@@ -37,8 +37,8 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
           Cart is empty. <Link href='/'>Go Shopping</Link>
         </div>
       ) : (
-        <div className='grid md:grid-cols-4 md:gap-5'>
-          <div className='overflow-x-auto md:col-span-3'>
+        <div className='grid lg:grid-cols-4 lg:gap-5'>
+          <div className='overflow-x-auto lg:col-span-3'>
             <Table>
               <TableHeader>
                 <TableRow>
@@ -54,7 +54,7 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
                     <TableCell>
                       <Link
                         href={`/product/${item.slug}`}
-                        className='flex items-center'
+                        className='flex items-center w-max'
                       >
                         <Image
                           src={item.image}
